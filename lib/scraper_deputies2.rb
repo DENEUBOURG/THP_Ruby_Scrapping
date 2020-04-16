@@ -36,4 +36,4 @@ def scrap_deputies
     return deputies
 end
 
-#puts deputies_email = scrap_deputies
+puts deputies_email = scrap_deputies
