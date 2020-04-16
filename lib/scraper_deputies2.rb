@@ -7,8 +7,8 @@ def get_deputies_list
     deputies = []
     #Get Deputy Web Page:
     doc.css('.list_dep').map{|list_dep|
-        lastname = list_dep.css('.list_nom').text.strip.split(',')[0]
-        firstname = list_dep.css('.list_nom').text.strip.split(',')[1].strip
+        lastname = list_dep.css('.list_nom').text.split(',')[0].strip
+        firstname = list_dep.css('.list_nom').text.split(',')[1].strip
         url = ("https://www.nosdeputes.fr").concat(list_dep.css('span').map{|value| value['title']}[0])
         unless list_dep.css('.list_left').text.strip.include?('ancien') == true
             deputies.insert(-1,{"lastname" => lastname, "firstname" => firstname, "url"=> url})
@@ -36,4 +36,4 @@ def scrap_deputies
     return deputies
 end
 
-puts deputies_email = scrap_deputies
+#puts deputies_email = scrap_deputies
