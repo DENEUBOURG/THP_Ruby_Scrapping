@@ -23,7 +23,7 @@ def get_deputy_email(url)
             return a.content
         end
     }
-    return nil
+    return "Non Renseigné"
 end
 
 def scrap_deputies
